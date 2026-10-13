@@ -11,15 +11,15 @@
 </p>
 
 <p>
-  <img src="https://img.shields.io/badge/Accuracy_92%2C19%25-2E7D32?style=for-the-badge" alt="Accuracy 92,19%"> <img src="https://img.shields.io/badge/AUC_0,97-1565C0?style=for-the-badge" alt="AUC 0,97"> <img src="https://img.shields.io/badge/Dataset_NSL--KDD-455A64?style=for-the-badge" alt="Dataset NSL-KDD">
+  <a href="#résultats"><img src="https://img.shields.io/badge/Accuracy_92%2C19%25-2E7D32?style=for-the-badge" alt="Accuracy 92,19%"></a> <a href="#résultats"><img src="https://img.shields.io/badge/AUC_0,97-1565C0?style=for-the-badge" alt="AUC 0,97"></a> <a href="https://www.kaggle.com/datasets/hassan06/nslkdd"><img src="https://img.shields.io/badge/Dataset_NSL--KDD-455A64?style=for-the-badge" alt="Dataset NSL-KDD"></a>
 </p>
 
 <p>
-  <img src="https://img.shields.io/badge/SVM-5E35B1?style=for-the-badge" alt="SVM"> <img src="https://img.shields.io/badge/Random_Forest-2E7D32?style=for-the-badge" alt="Random Forest"> <img src="https://img.shields.io/badge/XGBoost-EF6C00?style=for-the-badge" alt="XGBoost">
+  <a href="https://scikit-learn.org/stable/modules/svm.html"><img src="https://img.shields.io/badge/SVM-5E35B1?style=for-the-badge" alt="SVM"></a> <a href="https://scikit-learn.org/stable/modules/ensemble.html#forest"><img src="https://img.shields.io/badge/Random_Forest-2E7D32?style=for-the-badge" alt="Random Forest"></a> <a href="https://xgboost.readthedocs.io/"><img src="https://img.shields.io/badge/XGBoost-EF6C00?style=for-the-badge" alt="XGBoost"></a>
 </p>
 
 <p>
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"> <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white" alt="scikit-learn"> <img src="https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="pandas"> <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy"> <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Streamlit"> <img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white" alt="Jupyter">
+  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"></a> <a href="https://scikit-learn.org/"><img src="https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white" alt="scikit-learn"></a> <a href="https://pandas.pydata.org/"><img src="https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="pandas"></a> <a href="https://numpy.org/"><img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy"></a> <a href="https://streamlit.io/"><img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Streamlit"></a> <a href="https://jupyter.org/"><img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white" alt="Jupyter"></a>
 </p>
 
 </div>
