@@ -141,3 +141,8 @@ Ouvrez `notebooks/machine_learning_project.ipynb` dans Jupyter ou VS Code et ex√
 ## Technologies
 
 Python, pandas, NumPy, scikit-learn, XGBoost, matplotlib, seaborn, joblib, Streamlit, Jupyter.
+
+## Auteurs
+
+- **Salma Hanabal** : [@salmahanabal](https://github.com/salmahanabal)
+- **Iliass El Khabbaoui** : [@ivanelk7](https://github.com/ivanelk7)

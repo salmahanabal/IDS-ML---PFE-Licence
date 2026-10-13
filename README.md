@@ -141,3 +141,8 @@ Open `notebooks/machine_learning_project.ipynb` in Jupyter or VS Code and run th
 ## Tech stack
 
 Python, pandas, NumPy, scikit-learn, XGBoost, matplotlib, seaborn, joblib, Streamlit, Jupyter.
+
+## Authors
+
+- **Salma Hanabal**: [@salmahanabal](https://github.com/salmahanabal)
+- **Iliass El Khabbaoui**: [@ivanelk7](https://github.com/ivanelk7)
