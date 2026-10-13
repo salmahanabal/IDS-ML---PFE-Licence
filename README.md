@@ -1,14 +1,53 @@
-🇫🇷 [Lire en français](README.fr.md)
+<div align="center">
 
-# Network Intrusion Detection with Machine Learning (NSL-KDD)
+# Network Intrusion Detection
+### with Machine Learning
 
-A machine learning project that detects malicious network connections. It trains and compares three classifiers (SVM, Random Forest and XGBoost) on the NSL-KDD benchmark dataset, then serves the selected model (Random Forest) through a small Streamlit web interface where you can upload network traffic records and get a prediction for each one.
+<p>Detect malicious network connections with machine learning. Three classifiers are trained and compared on the NSL-KDD benchmark, and the selected Random Forest is served through an interactive Streamlit interface.</p>
 
-The work started as an end-of-studies project (Licence in Computer Science, Faculty of Sciences, Rabat) and is shared here as a complete, runnable example of an ML pipeline: data preparation, model comparison, model export, and a simple application on top of it.
+<p>
+  <a href="report/Rapport_PFE_IDS_NSL-KDD.pdf"><img src="https://img.shields.io/badge/See_the_report-1565C0?style=for-the-badge&logo=readthedocs&logoColor=white" alt="See the report"></a>
+  <a href="README.fr.md"><img src="https://img.shields.io/badge/Version_fran%C3%A7aise-6A1B9A?style=for-the-badge&logo=googletranslate&logoColor=white" alt="Version française"></a>
+</p>
 
-The full project report (in French, 61 pages) is available here: [report/Rapport_PFE_IDS_NSL-KDD.pdf](report/Rapport_PFE_IDS_NSL-KDD.pdf).
+<p>
+  <img src="https://img.shields.io/badge/Accuracy_92.19%25-2E7D32?style=for-the-badge" alt="Accuracy 92.19%"> <img src="https://img.shields.io/badge/AUC_0.97-1565C0?style=for-the-badge" alt="AUC 0.97"> <img src="https://img.shields.io/badge/Dataset_NSL--KDD-455A64?style=for-the-badge" alt="Dataset NSL-KDD">
+</p>
 
-## What the project does
+<p>
+  <img src="https://img.shields.io/badge/SVM-5E35B1?style=for-the-badge" alt="SVM"> <img src="https://img.shields.io/badge/Random_Forest-2E7D32?style=for-the-badge" alt="Random Forest"> <img src="https://img.shields.io/badge/XGBoost-EF6C00?style=for-the-badge" alt="XGBoost">
+</p>
+
+<p>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"> <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white" alt="scikit-learn"> <img src="https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="pandas"> <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy"> <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Streamlit"> <img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white" alt="Jupyter">
+</p>
+
+</div>
+
+---
+
+## Table of contents
+
+- [Overview](#overview)
+- [Highlights](#highlights)
+- [Dataset](#dataset)
+- [Results](#results)
+- [Web interface](#web-interface)
+- [Project structure](#project-structure)
+- [Getting started](#getting-started)
+- [Limitations](#limitations)
+- [Ideas for improvement](#ideas-for-improvement)
+- [Authors](#authors)
+
+---
+
+## Overview
+
+This project detects malicious network connections using machine learning. It trains and compares three classifiers (SVM, Random Forest and XGBoost) on the NSL-KDD benchmark dataset, then serves the selected model (Random Forest) through a small Streamlit web interface: you upload network traffic records and get a prediction for each one.
+
+It started as an end-of-studies project (Licence in Mathematical Sciences and Computer Science, Faculty of Sciences, Rabat) and is shared here as a complete, runnable example of a machine learning pipeline. The full report (in French, 61 pages) is available [here](report/Rapport_PFE_IDS_NSL-KDD.pdf).
+
+## Highlights
 
 - Cleans and prepares the NSL-KDD data (binary labels, one-hot encoding, column alignment between train and test).
 - Trains three models on the same data and evaluates them on the official test set with the same metrics.
@@ -41,16 +80,19 @@ Random Forest and XGBoost are very close and clearly ahead of the SVM. Random Fo
 
 Random Forest confusion matrix (left) and ROC curve (right):
 
-<p>
+<p align="center">
   <img src="screenshots/rf_confusion_matrix.png" width="45%" alt="Random Forest confusion matrix">
   <img src="screenshots/rf_roc_curve.png" width="45%" alt="Random Forest ROC curve">
 </p>
 
-### Model settings
+<details>
+<summary><strong>Model settings</strong></summary>
 
 - **SVM:** `StandardScaler` followed by `SVC` (RBF kernel, `C=1.0`, `gamma='scale'`, `probability=True`).
 - **Random Forest:** 500 trees, `max_depth=15`, `min_samples_split=10`, `min_samples_leaf=4`, `max_features='sqrt'`.
 - **XGBoost:** 500 trees, `max_depth=8`, `learning_rate=0.05`, `subsample=0.8`, `colsample_bytree=0.8`, `reg_alpha=0.1`, `reg_lambda=1.0`.
+
+</details>
 
 ## The web interface
 
@@ -63,9 +105,9 @@ The app (`notebooks/app_v1.py`) lets you:
 - view three charts: counts per class, distribution of attack probabilities with the threshold, and a pie chart of the split;
 - if the file contains a `class` column, compare the predictions with the true labels.
 
-![Interface summary](screenshots/interface_summary.png)
+<p align="center"><img src="screenshots/interface_summary.png" width="90%" alt="Interface summary"></p>
 
-![Interface charts](screenshots/interface_charts.png)
+<p align="center"><img src="screenshots/interface_charts.png" width="90%" alt="Interface charts"></p>
 
 **Input format.** The app expects a file that is **already preprocessed**: the 122 columns obtained after one-hot encoding, in the same format as `X_train` / `X_test` in the notebook. Missing columns trigger a warning, and extra columns are ignored. Ready-to-use examples are provided in the repository:
 
@@ -88,6 +130,7 @@ The app (`notebooks/app_v1.py`) lets you:
 │   └── req1.txt                         # Python dependencies
 ├── APP_data_test/                       # extra test files for the interface
 ├── data/                                # original NSL-KDD files
+├── report/                              # full project report (PDF)
 ├── screenshots/                         # images used in this README
 └── .gitignore
 ```
@@ -144,5 +187,9 @@ Python, pandas, NumPy, scikit-learn, XGBoost, matplotlib, seaborn, joblib, Strea
 
 ## Authors
 
-- **Salma Hanabal**: [@salmahanabal](https://github.com/salmahanabal)
-- **Iliass El Khabbaoui**: [@ivanelk7](https://github.com/ivanelk7)
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/salmahanabal"><b>Salma Hanabal</b></a><br><sub>@salmahanabal</sub></td>
+    <td align="center"><a href="https://github.com/ivanelk7"><b>Iliass El Khabbaoui</b></a><br><sub>@ivanelk7</sub></td>
+  </tr>
+</table>

@@ -1,14 +1,53 @@
-🇬🇧 [Read in English](README.md)
+<div align="center">
 
-# Détection d'intrusions réseau par Machine Learning (NSL-KDD)
+# Détection d'intrusions réseau
+### par Machine Learning
 
-Un projet de machine learning qui détecte les connexions réseau malveillantes. Il entraîne et compare trois classifieurs (SVM, Random Forest et XGBoost) sur le jeu de données de référence NSL-KDD, puis met le modèle retenu (Random Forest) à disposition à travers une petite interface web Streamlit : on y importe des enregistrements de trafic réseau et on obtient une prédiction pour chacun.
+<p>Détection de connexions réseau malveillantes par machine learning. Trois classifieurs sont entraînés et comparés sur le jeu de référence NSL-KDD, et le Random Forest retenu est proposé dans une interface Streamlit interactive.</p>
 
-Ce travail est né comme projet de fin d'études (Licence en Sciences Mathématiques et Informatique, Faculté des Sciences de Rabat). Il est partagé ici comme un exemple complet et exécutable de chaîne de machine learning : préparation des données, comparaison de modèles, export du modèle, puis application simple par-dessus.
+<p>
+  <a href="report/Rapport_PFE_IDS_NSL-KDD.pdf"><img src="https://img.shields.io/badge/Lire_le_rapport-1565C0?style=for-the-badge&logo=readthedocs&logoColor=white" alt="Lire le rapport"></a>
+  <a href="README.md"><img src="https://img.shields.io/badge/English_version-6A1B9A?style=for-the-badge&logo=googletranslate&logoColor=white" alt="English version"></a>
+</p>
 
-Le rapport complet du projet (61 pages) est disponible ici : [report/Rapport_PFE_IDS_NSL-KDD.pdf](report/Rapport_PFE_IDS_NSL-KDD.pdf).
+<p>
+  <img src="https://img.shields.io/badge/Accuracy_92%2C19%25-2E7D32?style=for-the-badge" alt="Accuracy 92,19%"> <img src="https://img.shields.io/badge/AUC_0,97-1565C0?style=for-the-badge" alt="AUC 0,97"> <img src="https://img.shields.io/badge/Dataset_NSL--KDD-455A64?style=for-the-badge" alt="Dataset NSL-KDD">
+</p>
 
-## Ce que fait le projet
+<p>
+  <img src="https://img.shields.io/badge/SVM-5E35B1?style=for-the-badge" alt="SVM"> <img src="https://img.shields.io/badge/Random_Forest-2E7D32?style=for-the-badge" alt="Random Forest"> <img src="https://img.shields.io/badge/XGBoost-EF6C00?style=for-the-badge" alt="XGBoost">
+</p>
+
+<p>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"> <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white" alt="scikit-learn"> <img src="https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="pandas"> <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy"> <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Streamlit"> <img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white" alt="Jupyter">
+</p>
+
+</div>
+
+---
+
+## Sommaire
+
+- [Présentation](#présentation)
+- [Points clés](#points-clés)
+- [Jeu de données](#jeu-de-données)
+- [Résultats](#résultats)
+- [Interface web](#interface-web)
+- [Structure du projet](#structure-du-projet)
+- [Démarrage](#démarrage)
+- [Limites](#limites)
+- [Pistes d'amélioration](#pistes-damélioration)
+- [Auteurs](#auteurs)
+
+---
+
+## Présentation
+
+Ce projet détecte les connexions réseau malveillantes grâce au machine learning. Il entraîne et compare trois classifieurs (SVM, Random Forest et XGBoost) sur le jeu de référence NSL-KDD, puis met le modèle retenu (Random Forest) à disposition dans une petite interface web Streamlit : on importe des enregistrements de trafic réseau et on obtient une prédiction pour chacun.
+
+Il est né comme projet de fin d'études (Licence en Sciences Mathématiques et Informatique, Faculté des Sciences de Rabat) et il est partagé ici comme un exemple complet et exécutable de chaîne de machine learning. Le rapport complet (61 pages) est disponible [ici](report/Rapport_PFE_IDS_NSL-KDD.pdf).
+
+## Points clés
 
 - Nettoie et prépare les données NSL-KDD (étiquettes binaires, encodage one-hot, alignement des colonnes entre entraînement et test).
 - Entraîne trois modèles sur les mêmes données et les évalue sur le jeu de test officiel avec les mêmes métriques.
@@ -41,16 +80,19 @@ Random Forest et XGBoost sont très proches et nettement devant le SVM. Random F
 
 Matrice de confusion (à gauche) et courbe ROC (à droite) du Random Forest :
 
-<p>
+<p align="center">
   <img src="screenshots/rf_confusion_matrix.png" width="45%" alt="Matrice de confusion du Random Forest">
   <img src="screenshots/rf_roc_curve.png" width="45%" alt="Courbe ROC du Random Forest">
 </p>
 
-### Paramètres des modèles
+<details>
+<summary><strong>Paramètres des modèles</strong></summary>
 
 - **SVM :** `StandardScaler` suivi de `SVC` (noyau RBF, `C=1.0`, `gamma='scale'`, `probability=True`).
 - **Random Forest :** 500 arbres, `max_depth=15`, `min_samples_split=10`, `min_samples_leaf=4`, `max_features='sqrt'`.
 - **XGBoost :** 500 arbres, `max_depth=8`, `learning_rate=0.05`, `subsample=0.8`, `colsample_bytree=0.8`, `reg_alpha=0.1`, `reg_lambda=1.0`.
+
+</details>
 
 ## L'interface web
 
@@ -63,9 +105,9 @@ L'application (`notebooks/app_v1.py`) permet de :
 - afficher trois graphiques : effectifs par classe, distribution des probabilités d'attaque avec le seuil, et diagramme circulaire de la répartition ;
 - si le fichier contient une colonne `class`, comparer les prédictions aux vraies étiquettes.
 
-![Résumé de l'interface](screenshots/interface_summary.png)
+<p align="center"><img src="screenshots/interface_summary.png" width="90%" alt="Résumé de l'interface"></p>
 
-![Graphiques de l'interface](screenshots/interface_charts.png)
+<p align="center"><img src="screenshots/interface_charts.png" width="90%" alt="Graphiques de l'interface"></p>
 
 **Format d'entrée.** L'application attend un fichier **déjà prétraité** : les 122 colonnes obtenues après l'encodage one-hot, au même format que `X_train` / `X_test` dans le notebook. Les colonnes manquantes déclenchent un avertissement et les colonnes en trop sont ignorées. Des exemples prêts à l'emploi sont fournis dans le dépôt :
 
@@ -88,6 +130,7 @@ L'application (`notebooks/app_v1.py`) permet de :
 │   └── req1.txt                         # dépendances Python
 ├── APP_data_test/                       # fichiers de test supplémentaires pour l'interface
 ├── data/                                # fichiers NSL-KDD d'origine
+├── report/                              # rapport complet du projet (PDF)
 ├── screenshots/                         # images utilisées dans ce README
 └── .gitignore
 ```
@@ -144,5 +187,9 @@ Python, pandas, NumPy, scikit-learn, XGBoost, matplotlib, seaborn, joblib, Strea
 
 ## Auteurs
 
-- **Salma Hanabal** : [@salmahanabal](https://github.com/salmahanabal)
-- **Iliass El Khabbaoui** : [@ivanelk7](https://github.com/ivanelk7)
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/salmahanabal"><b>Salma Hanabal</b></a><br><sub>@salmahanabal</sub></td>
+    <td align="center"><a href="https://github.com/ivanelk7"><b>Iliass El Khabbaoui</b></a><br><sub>@ivanelk7</sub></td>
+  </tr>
+</table>
