@@ -6,6 +6,8 @@ A machine learning project that detects malicious network connections. It trains
 
 The work started as an end-of-studies project (Licence in Computer Science, Faculty of Sciences, Rabat) and is shared here as a complete, runnable example of an ML pipeline: data preparation, model comparison, model export, and a simple application on top of it.
 
+The full project report (in French, 61 pages) is available here: [report/Rapport_PFE_IDS_NSL-KDD.pdf](report/Rapport_PFE_IDS_NSL-KDD.pdf).
+
 ## What the project does
 
 - Cleans and prepares the NSL-KDD data (binary labels, one-hot encoding, column alignment between train and test).

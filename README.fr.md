@@ -6,6 +6,8 @@ Un projet de machine learning qui détecte les connexions réseau malveillantes.
 
 Ce travail est né comme projet de fin d'études (Licence en Sciences Mathématiques et Informatique, Faculté des Sciences de Rabat). Il est partagé ici comme un exemple complet et exécutable de chaîne de machine learning : préparation des données, comparaison de modèles, export du modèle, puis application simple par-dessus.
 
+Le rapport complet du projet (61 pages) est disponible ici : [report/Rapport_PFE_IDS_NSL-KDD.pdf](report/Rapport_PFE_IDS_NSL-KDD.pdf).
+
 ## Ce que fait le projet
 
 - Nettoie et prépare les données NSL-KDD (étiquettes binaires, encodage one-hot, alignement des colonnes entre entraînement et test).
