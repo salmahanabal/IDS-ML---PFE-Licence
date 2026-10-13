@@ -1,0 +1,28 @@
+# Environnements virtuels
+.venv/
+.venv-1/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Éditeur / système
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Variables d'environnement et journaux
+.env
+*.log
+
+# Anciens résultats (ancienne version du projet, avec KNN)
+results/
+
+# Ancien modèle et copie inutile
+APP_data_test/random_forest_nslkdd_model.pkl
+data/KDD-NLS/KDDTest - Copie.csv
