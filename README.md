@@ -126,12 +126,12 @@ The app (`notebooks/app_v1.py`) lets you:
 │   ├── rf_model.pkl                     # trained Random Forest
 │   ├── rf_columns.pkl                   # the 122 columns expected by the model
 │   ├── rf_threshold.pkl                 # decision threshold
-│   ├── deux_lignes.csv, ligne_*.csv     # small sample inputs for the app
-│   └── req1.txt                         # Python dependencies
+│   └── deux_lignes.csv, ligne_*.csv     # small sample inputs for the app
 ├── APP_data_test/                       # extra test files for the interface
 ├── data/                                # original NSL-KDD files
 ├── report/                              # full project report (PDF)
 ├── screenshots/                         # images used in this README
+├── requirements.txt                       # Python dependencies (everything, including Streamlit)
 └── .gitignore
 ```
 
@@ -149,8 +149,7 @@ python -m venv .venv
 # Windows (PowerShell):  .venv\Scripts\Activate.ps1
 # macOS / Linux:         source .venv/bin/activate
 
-pip install -r notebooks/req1.txt
-pip install streamlit
+pip install -r requirements.txt
 ```
 
 ### 2. Run the interface
